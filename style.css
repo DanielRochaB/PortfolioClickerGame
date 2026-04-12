@@ -1,0 +1,51 @@
+#loja {
+    margin-top: 30px;
+    padding: 15px;
+    border: 2px solid black;
+    width: 250px;
+    text-align: center;
+}
+
+#loja h2 {
+    margin-top: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center; /* centraliza tudo */
+}
+
+#h1 {
+    text-align: left;   /* tira do centro */
+    margin-left: 20px;  /* afasta da borda */
+}
+
+#game, #loja {
+    margin: 20px auto;
+    width: 300px;
+}
+
+body.background {
+    background-image: url("assets/imagens/background.jpg"); 
+    background-size: cover;
+    background-position: center;
+}
+
+#mixer {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* agrupa label + slider */
+.volumeControl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
