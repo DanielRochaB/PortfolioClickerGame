@@ -1,31 +1,31 @@
 const counter = document.getElementById("counter");
 const button = document.getElementById("clickBtn");
-const loja = document.getElementById("loja");
-const buyBtn = document.getElementById("clickBtnComprar1");
-const buyBtn2 = document.getElementById("clickBtnComprar2");
-const buyBtn3 = document.getElementById("clickBtnComprar3");
-const buyBtn4 = document.getElementById("clickBtnComprar4");
-const buyBtn5 = document.getElementById("clickBtnComprar5");
-const titulo = document.getElementById("h1");
+const store = document.getElementById("store");
+const buyBtn = document.getElementById("clickBtnPurchase1");
+const buyBtn2 = document.getElementById("clickBtnPurchase2");
+const buyBtn3 = document.getElementById("clickBtnPurchase3");
+const buyBtn4 = document.getElementById("clickBtnPurchase4");
+const buyBtn5 = document.getElementById("clickBtnPurchase5");
+const title = document.getElementById("h1");
 const itemBackground = document.getElementById("itemBackground");
-const musica = document.getElementById("musica");
+const music = document.getElementById("music");
 const mixer = document.getElementById("mixer");
 
 
-let pontos = 0;
-let comprado1 = false;
-let comprado2 = false;
-let comprado3 = false;
-let comprado4 = false;
-let comprado5 = false;
+let points = 0;
+let purchased1 = false;
+let purchased2 = false;
+let purchased3 = false;
+let purchased4 = false;
+let purchased5 = false;
 
-let autoAtivo = false;
-let intervalo;
+let autoActive = false;
+let interval;
 
 // botão de clique
 button.addEventListener("click", () => {
-  pontos++;
-  counter.textContent = pontos;
+  points++;
+  counter.textContent = points;
 
   verificarDesbloqueios();
 });
@@ -33,18 +33,15 @@ button.addEventListener("click", () => {
 // botão comprar
 buyBtn.addEventListener("click", () => {
 
-  if (pontos >= 10 && !comprado1) {
+  if (points >= 10 && !purchased1) {
 
-    comprado1 = true;
+    purchased1 = true;
 
-    // desconta 10 pontos
-    pontos -= 10;
-    counter.textContent = pontos;
+    points -= 10;
+    counter.textContent = points;
 
-    // mostra título
-    titulo.style.display = "block";
+    title.style.display = "block";
 
-    // bloqueia compra
     buyBtn.disabled = true;
     buyBtn.textContent = "Comprado";
   }
@@ -52,18 +49,15 @@ buyBtn.addEventListener("click", () => {
 
 buyBtn2.addEventListener("click", () => {
 
-  if (pontos >= 50 && !comprado2) {
+  if (points >= 50 && !purchased2) {
 
-    comprado2 = true;
+    purchased2 = true;
 
-    // desconta pontos
-    pontos -= 50;
-    counter.textContent = pontos;
+    points -= 50;
+    counter.textContent = points;
 
-    // aplica fundo
     document.body.classList.add("background");
 
-    // trava botão
     buyBtn2.disabled = true;
     buyBtn2.textContent = "Comprado";
   }
@@ -72,20 +66,17 @@ buyBtn2.addEventListener("click", () => {
 
 buyBtn3.addEventListener("click", () => {
 
-  if (pontos >= 70 && !comprado3) {
+  if (points >= 70 && !purchased3) {
 
-    comprado3 = true;
+    purchased3 = true;
 
-    // desconta pontos
-    pontos -= 70;
-    counter.textContent = pontos;
+    points -= 70;
+    counter.textContent = points;
 
-    musica.volume = 0.7;
-    musica.currentTime = 0;
-    musica.play();
+    music.volume = 0.7;
+    music.currentTime = 0;
+    music.play();
     
-
-    // trava botão
     buyBtn3.disabled = true;
     buyBtn3.textContent = "Comprado";
   }
@@ -94,17 +85,15 @@ buyBtn3.addEventListener("click", () => {
 
 buyBtn4.addEventListener("click", () => {
 
-  if (pontos >= 25 && !comprado4) {
+  if (points >= 25 && !purchased4) {
 
-    comprado4 = true;
+    purchased4 = true;
 
-    // desconta pontos
-    pontos -= 25;
-    counter.textContent = pontos;
+    points -= 25;
+    counter.textContent = points;
 
     mixer.style.display = "block";
 
-    // trava botão
     buyBtn4.disabled = true;
     buyBtn4.textContent = "Comprado";
   }
@@ -113,79 +102,77 @@ buyBtn4.addEventListener("click", () => {
 
 buyBtn5.addEventListener("click", () => {
 
-  if (pontos >= 100 && !comprado5) {
+  if (points >= 100 && !purchased5) {
 
-    comprado5 = true;
+    purchased5 = true;
 
-    // desconta pontos
-    pontos -= 100;
-    counter.textContent = pontos;
+    points -= 100;
+    counter.textContent = points;
 
-    if (!autoAtivo) {
+    if (!autoActive) {
 
-        autoAtivo = true;
+        autoActive = true;
 
-        intervalo = setInterval(() => {
-            pontos += 1;
-            counter.textContent = pontos;
-        }, 500); // 500ms = 1 segundo
+        interval = setInterval(() => {
+            points += 1;
+            counter.textContent = points;
+        }, 500); // 500ms = 1 sec
     }
 
-    // trava botão
     buyBtn5.disabled = true;
     buyBtn5.textContent = "Comprado";
   }
 
 });
 
-// PAUSAR / RESUMIR
+// PAUSE / RESUME
 toggleMusic.addEventListener("click", () => {
 
-    if (musica.paused) {
-        musica.play();
+    if (music.paused) {
+        music.play();
         toggleMusic.textContent = "⏸ Pausar Música";
     } else {
-        musica.pause();
+        music.pause();
         toggleMusic.textContent = "▶️ Tocar Música";
     }
 
 });
 
-// CONTROLE DE VOLUME (mixer)
+// MIXER
 volumeSlider.addEventListener("input", () => {
-    musica.volume = volumeSlider.value;
+    music.volume = volumeSlider.value;
 });
 
 
 
 function verificarDesbloqueios() {
   
-    // libera a loja com 5 pontos
-    if (pontos >= 5) {
-        loja.style.display = "block";
+    // libera a store com 5 points
+    if (points >= 5) {
+        store.style.display = "block";
     }  
-    if (pontos >= 10 && !comprado1) {
-        document.getElementById("itemTitulo").style.display = "block";
+    if (points >= 10 && !purchased1) {
+        document.getElementById("itemTitle").style.display = "block";
     }
 
-    if (pontos >= 20 && !comprado2) {
+    if (points >= 20 && !purchased2) {
         itemBackground.style.display = "block";
     }
 
-    if (pontos >= 45 && !comprado3) {
-        itemMusica.style.display = "block";
+    if (points >= 45 && !purchased3) {
+        itemMusic.style.display = "block";
     }
 
-    if (pontos >= 15 && comprado3) {
+    if (points >= 15 && purchased3) {
         itemMixer.style.display = "block";
     }
 
-    if (comprado4) {
+    if (purchased4) {
         toggleMusic.style.display = "block";
         volumeSlider.style.display = "block";
     }
 
-    if (pontos >= 70 && !comprado5) {
+    if (points >= 70 && !purchased5) {
         itemAutoClicker.style.display = "block";
     }
 

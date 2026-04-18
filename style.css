@@ -1,4 +1,4 @@
-#loja {
+#store {
     margin-top: 30px;
     padding: 15px;
     border: 2px solid black;
@@ -6,22 +6,22 @@
     text-align: center;
 }
 
-#loja h2 {
+#store h2 {
     margin-top: 0;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    text-align: center; /* centraliza tudo */
+    text-align: center; /* centralize everything */
 }
 
 #h1 {
-    text-align: left;   /* tira do centro */
-    margin-left: 20px;  /* afasta da borda */
+    text-align: left;   /* move away from the center */
+    margin-left: 20px;  /* move away from the edge */
 }
 
-#game, #loja {
+#game, #store {
     margin: 20px auto;
     width: 300px;
 }
@@ -43,7 +43,7 @@ body.background {
     gap: 10px;
 }
 
-/* agrupa label + slider */
+/* Group up label + slider */
 .volumeControl {
     display: flex;
     align-items: center;
