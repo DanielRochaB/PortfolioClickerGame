@@ -11,7 +11,6 @@ const itemBackground = document.getElementById("itemBackground");
 const music = document.getElementById("music");
 const mixer = document.getElementById("mixer");
 
-
 let points = 0;
 let purchased1 = false;
 let purchased2 = false;
@@ -22,15 +21,15 @@ let purchased5 = false;
 let autoActive = false;
 let interval;
 
-// botão de clique
+// click button
 button.addEventListener("click", () => {
   points++;
   counter.textContent = points;
 
-  verificarDesbloqueios();
+  checkUnlocks();
 });
 
-// botão comprar
+// buy button
 buyBtn.addEventListener("click", () => {
 
   if (points >= 10 && !purchased1) {
@@ -143,11 +142,9 @@ volumeSlider.addEventListener("input", () => {
     music.volume = volumeSlider.value;
 });
 
-
-
-function verificarDesbloqueios() {
+function checkUnlocks() {
   
-    // libera a store com 5 points
+    // Unlock the store with 5 points.
     if (points >= 5) {
         store.style.display = "block";
     }  
@@ -175,5 +172,4 @@ function verificarDesbloqueios() {
     if (points >= 70 && !purchased5) {
         itemAutoClicker.style.display = "block";
     }
-
 }
