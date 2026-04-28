@@ -16,11 +16,18 @@
     </header> 
 
     <div id="mixer" style="display:none;">
+        <br><br>
         <button id="toggleMusic">⏸ Pausar Música</button>
         <br><br>
         <label>Volume:</label>
         <input type="range" id="volumeSlider"
             min="0" max="1" step="0.01" value="0.7">
+    </div>
+
+    <div id="lang" style="display:none;">
+        <button id="langBtn">
+            <img id="flagIcon" src="/assets/images/br.png" alt="Idioma" width="30">
+        </button>
     </div>
 
     <div id="game">
@@ -32,37 +39,43 @@
         <h2>Loja</h2>
 
         <div class="itemStore" style="display:none;" id="itemTitle">
-            <p>Comprar Título (10 Cliques)</p>
+            <p id="itemTitleText">Desbloquear Título (10 Cliques)</p>
             <button id="clickBtnPurchase1">
-                Comprar
+                Desbloquear
+            </button>
+        </div>
+        <div class="itemStore" style="display:none;" id="itemLanguage">
+            <p id="itemLanguageText">Desbloquear Linguagem (30 Cliques)</p>
+            <button id="clickBtnPurchase6">
+                Desbloquear
             </button>
         </div>
         <div class="itemStore" style="display:none;" id="itemBackground">
-            <p>Comprar Background (50 Cliques)</p>
+            <p id="itemBackgroundText">Desbloquear Background (50 Cliques)</p>
             <button id="clickBtnPurchase2">
-                Comprar
+                Desbloquear
             </button>
             <audio id="music" src="assets/music.mp3" loop></audio>
         </div>
         <div class="itemStore" style="display:none;" id="itemMusic">
-            <p>Comprar musica (70 Cliques)</p>
+            <p id="itemMusicText">Desbloquear musica (70 Cliques)</p>
             <button id="clickBtnPurchase3">
-                Comprar
+                Desbloquear
             </button>
         </div>
         <div class="itemStore" style="display:none;" id="itemMixer">
-            <p>Comprar Mixer (25 Cliques)</p>
+            <p id="itemMixerText">Desbloquear Mixer (25 Cliques)</p>
             <button id="clickBtnPurchase4">
-                Comprar
+                Desbloquear
             </button>
         </div>
         <div class="itemStore" style="display:none;" id="itemAutoClicker">
-            <p>Comprar Auto Clicker (100 Cliques)</p>
+            <p id="itemAutoClickerText">Desbloquear Auto Clicker (100 Cliques)</p>
             <button id="clickBtnPurchase5">
-                Comprar
+                Desbloquear
             </button>
         </div>
-        
+    
 
     </div>
 

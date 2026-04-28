@@ -4,7 +4,7 @@ A clicker game created with the goal of studying JS, HTML, and CSS.
 
 ## Version
 
-Current version: v1.0.2
+Current version: v1.1.0
 
 ## 🚀 Technologies used
 
@@ -27,3 +27,14 @@ cd portfolio-clicker
 To start the project:
 
 Open the index.html file in your browser.
+
+## 🎵 Audio Credits
+
+This project uses royalty-free music.
+
+- Track: Spacedrum Handpan and Waterdrum Groove
+- Author: Uwe Hermann
+- Source: https://www.youtube.com/watch?v=LfUhKJ7X5-4
+- License: Creative Commons BY 4.0
+
+This music is used in accordance with its license terms.
