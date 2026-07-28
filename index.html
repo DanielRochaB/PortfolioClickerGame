@@ -1,85 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Clicker Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1 id="h1" style="display:none;">
-            Portfólio: The Clicker Game
-        </h1>
-    </header> 
+    <!-- Horizontal -->
+    <section class="horizontal-section">
 
-    <div id="mixer" style="display:none;">
-        <br><br>
-        <button id="toggleMusic">⏸ Pausar Música</button>
-        <br><br>
-        <label>Volume:</label>
-        <input type="range" id="volumeSlider"
-            min="0" max="1" step="0.01" value="0.7">
+        <div class="horizontal-container">
+
+            <div class="slide slide1">
+                <header>
+                    <h1 id="h1" style="display:none;">
+                        Portfólio: The Clicker Game
+                    </h1>
+                </header>
+                
+                <div id="nextArrow"></div>
+
+                <div id="mixer" style="display:none;">
+                    <br><br>
+                    <button id="toggleMusic">⏸ Pausar Música</button>
+                    <br><br>
+                    <label>Volume:</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                </div>
+
+                <div id="lang" style="display:none;">
+                    <button id="langBtn">
+                        <img id="flagIcon" src="/assets/images/br.png" alt="Idioma" width="30">
+                    </button>
+                </div>
+
+                <div id="game">
+                    <h1 id="counter">0</h1>
+                    <button id="clickBtn">Clique aqui</button>
+                </div>
+
+                <div id="store" style="display:none;">
+                    <h2>Loja</h2>
+
+                    <div class="itemStore" style="display:none;" id="itemTitle">
+                        <p id="itemTitleText">Desbloquear Título (10 Cliques)</p>
+                        <button id="clickBtnPurchase1">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemLanguage">
+                        <p id="itemLanguageText">Desbloquear Linguagem (30 Cliques)</p>
+                        <button id="clickBtnPurchase6">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemBetterVisual">
+                        <p id="itemBetterVisualText">Desbloquear Visual Melhorado (50 Cliques)</p>
+                        <button id="clickBtnPurchase2">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemMusic">
+                        <p id="itemMusicText">Desbloquear Musica (70 Cliques)</p>
+                        <button id="clickBtnPurchase3">
+                            Desbloquear
+                        </button>
+                        <audio id="music" src="assets/music.mp3" loop></audio>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemMixer">
+                        <p id="itemMixerText">Desbloquear Mixer (25 Cliques)</p>
+                        <button id="clickBtnPurchase4">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemAutoClicker">
+                        <p id="itemAutoClickerText">Desbloquear Auto Clicker (100 Cliques)</p>
+                        <button id="clickBtnPurchase5">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemPortfolio">
+                        <p id="itemPortfolioText">Desbloquear Portfolio (200 Cliques)</p>
+                        <button id="clickBtnPurchase7">
+                            Desbloquear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide slide2">
+                <div id="nextArrow2"></div>
+                <div id="portfolioText" class="hidden">
+                <h1>Daniel Rocha Baumhardt</h1>
+
+                <h2 id="expTitle">Desenvolvedor de Chatbots | Inteligência Artificial | JavaScript</h2>
+
+                <div class="card">
+                    <h3 id="educationTitle">🎓 Formação Acadêmica</h3>
+                    <p id="educationUniversity">Universidade de Santa Cruz do Sul (UNISC)</p>
+                    <p id="educationDegree">Bacharelado</p>
+                </div>
+
+                <div class="card">
+                    <h3 id="aboutTitle">👋 Sobre Mim</h3>
+
+                    <p id="aboutText1">
+                        Profissional com mais de <strong>3 anos de experiência</strong> no
+                        desenvolvimento de chatbots e soluções de Inteligência Artificial.
+                    </p>
+
+                    <p id="aboutText2">
+                        Atuei na criação e manutenção de assistentes virtuais,
+                        integração de APIs e desenvolvimento de soluções utilizando
+                        Google Cloud Platform e IA Generativa, sempre seguindo
+                        metodologias ágeis e boas práticas de desenvolvimento.
+                    </p>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+
+        </div>
+
+    </section>
+
+    <!-- Vertical normal -->
+    <section class="page1">
+        <div id="nextArrow3"></div>
+        <div id="portfolioText2" class="hidden">
+
+        <div class="column">
+
+            <h2 id="experienceTitle">Experiência Profissional</h2>
+
+            <h3 id="jobTitle">Desenvolvedor de Chatbots</h3>
+
+            <ul>
+                <li id="exp1">Desenvolvimento e manutenção de chatbots.</li>
+                <li id="exp2">Desenvolvimento em JavaScript.</li>
+                <li id="exp3">Prompt Engineering para IA Generativa.</li>
+                <li id="exp4">Google Cloud Platform (GCP) e Vertex AI.</li>
+                <li id="exp5">Integração de APIs e serviços externos.</li>
+                <li id="exp6">Metodologia Scrum.</li>
+            </ul>
+
+            <h2 id="skillsTitle">Competências</h2>
+
+            <ul>
+                <li id="skill1">Desenvolvimento de Chatbots</li>
+                <li id="skill2">Soluções Conversacionais</li>
+                <li id="skill3">Integração de APIs</li>
+                <li id="skill4">Prompt Engineering</li>
+                <li id="skill5">Google Cloud Platform</li>
+                <li id="skill6">IA Generativa</li>
+                <li id="skill7">Vertex AI</li>
+                <li id="skill8">Gemini</li>
+                <li id="skill9">Blip</li>
+                <li id="skill10">Twilio</li>
+                <li id="skill11">Zendesk</li>
+                <li id="skill12">GitHub</li>
+                <li id="skill13">Scrum</li>
+                
+            </ul>
+
+        </div>
+
+        <div class="column">
+
+            <h2 id="languagesTitle">Linguagens</h2>
+
+            <p><li id="languages">JavaScript, Java e Python.</li></p>
+
+            <h2 id="experience2Title">Experiência</h2>
+
+            <ul>
+                <li id="experience1">Desenvolvimento de chatbots.</li>
+                <li id="experience2">Integração de APIs.</li>
+                <li id="experience3">Manutenção e evolução de aplicações.</li>
+                <li id="experience4">Desenvolvimento de funcionalidades e automações.</li>
+            </ul>
+
+            <h2 id="highlightsTitle">Destaques</h2>
+
+            <ul>
+                <li id="highlight1">3+ anos de experiência profissional.</li>
+                <li id="highlight2">Experiência em IA Generativa.</li>
+                <li id="highlight3">Prompt Engineering.</li>
+                <li id="highlight4">JavaScript</li>
+                <li id="highlight5">Blip</li>
+                <li id="highlight6">Metodologias Ágeis (Scrum).</li>
+            </ul>
+
+            <h2 id="contactTitle">Contato</h2>
+
+            <p>GitHub: DanielRochaB</p>
+            <p>LinkedIn: daniel-rocha-baumhardt</p>
+            <p>Email: dani.baumhardt@hotmail.com</p>
+
+        </div>
+
     </div>
+    </section>
 
-    <div id="lang" style="display:none;">
-        <button id="langBtn">
-            <img id="flagIcon" src="/assets/images/br.png" alt="Idioma" width="30">
-        </button>
-    </div>
-
-    <div id="game">
-        <h1 id="counter">0</h1>
-        <button id="clickBtn">Clique aqui</button>
-    </div>
-
-    <div id="store" style="display:none;">
-        <h2>Loja</h2>
-
-        <div class="itemStore" style="display:none;" id="itemTitle">
-            <p id="itemTitleText">Desbloquear Título (10 Cliques)</p>
-            <button id="clickBtnPurchase1">
-                Desbloquear
-            </button>
-        </div>
-        <div class="itemStore" style="display:none;" id="itemLanguage">
-            <p id="itemLanguageText">Desbloquear Linguagem (30 Cliques)</p>
-            <button id="clickBtnPurchase6">
-                Desbloquear
-            </button>
-        </div>
-        <div class="itemStore" style="display:none;" id="itemBackground">
-            <p id="itemBackgroundText">Desbloquear Background (50 Cliques)</p>
-            <button id="clickBtnPurchase2">
-                Desbloquear
-            </button>
-            <audio id="music" src="assets/music.mp3" loop></audio>
-        </div>
-        <div class="itemStore" style="display:none;" id="itemMusic">
-            <p id="itemMusicText">Desbloquear musica (70 Cliques)</p>
-            <button id="clickBtnPurchase3">
-                Desbloquear
-            </button>
-        </div>
-        <div class="itemStore" style="display:none;" id="itemMixer">
-            <p id="itemMixerText">Desbloquear Mixer (25 Cliques)</p>
-            <button id="clickBtnPurchase4">
-                Desbloquear
-            </button>
-        </div>
-        <div class="itemStore" style="display:none;" id="itemAutoClicker">
-            <p id="itemAutoClickerText">Desbloquear Auto Clicker (100 Cliques)</p>
-            <button id="clickBtnPurchase5">
-                Desbloquear
-            </button>
-        </div>
-    
-
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
 
 </body>
+
 </html>

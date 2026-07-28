@@ -1,3 +1,5 @@
+JS:
+
 const counter = document.getElementById("counter");
 const button = document.getElementById("clickBtn");
 const store = document.getElementById("store");
@@ -13,8 +15,6 @@ const music = document.getElementById("music");
 const mixer = document.getElementById("mixer");
 const lang = document.getElementById("lang");
 const flagIcon = document.getElementById("flagIcon");
-const portfolioText = document.getElementById("portfolioText");
-const portfolioText2 = document.getElementById("portfolioText2");
 
 let points = 0;
 let autoActive = false;
@@ -26,7 +26,6 @@ let purchased3 = false;
 let purchased4 = false;
 let purchased5 = false;
 let purchased6 = false;
-let purchased7 = false;
 
 const unlockedItems = {
     title: false,
@@ -34,8 +33,7 @@ const unlockedItems = {
     mixer: false,
     autoClicker: false,
     language: false,
-    betterVisual: false,
-    portfolio: false
+    betterVisual: false
 };
 
 //Translations
@@ -48,68 +46,13 @@ const translations = {
         title: "Portfólio: O jogo Clicker",
         itemTitle: "Desbloquear Título (10 Cliques)",
         itemBetterVisual: "Desbloquear Visual Melhorado (50 Cliques)",
-        itemMusic: "Desbloquear Música (70 Cliques)",
+        itemMusic: "Desbloquear musica (70 Cliques)",
         itemMixer: "Desbloquear Mixer (25 Cliques)",
         pauseMusic: "⏸ Pausar Música",
         playMusic: "▶️ Tocar Música",
         itemAutoClicker: "Desbloquear Auto Clicker (100 Cliques)",
-        itemLanguage: "Desbloquear Linguagem (30 Cliques)",
-        itemPortfolio: "Desbloquear Portfólio (200 Cliques)",
-        
-        expTitle: "Desenvolvedor de Chatbots | Inteligência Artificial | JavaScript",
-        educationTitle: "🎓 Formação Acadêmica",
-        educationUniversity: "Universidade de Santa Cruz do Sul (UNISC)",
-        educationDegree: "Bacharelado",
-        aboutTitle: "👋 Sobre Mim",
-        aboutText1: 'Profissional com mais de <strong>3 anos de experiência</strong> no desenvolvimento de chatbots e soluções de Inteligência Artificial.',
-        aboutText2: 'Atuei na criação e manutenção de assistentes virtuais, integração de APIs e desenvolvimento de soluções utilizando Google Cloud Platform e IA Generativa, sempre seguindo metodologias ágeis e boas práticas de desenvolvimento.',
+        itemLanguage: "Desbloquear Linguagem (30 Cliques)"
 
-        experienceTitle: "Experiência Profissional",
-        jobTitle: "Desenvolvedor de Chatbots",
-
-        exp1: "Desenvolvimento e manutenção de chatbots.",
-        exp2: "Desenvolvimento em JavaScript.",
-        exp3: "Prompt Engineering para IA Generativa.",
-        exp4: "Google Cloud Platform (GCP) e Vertex AI.",
-        exp5: "Integração de APIs e serviços externos.",
-        exp6: "Metodologia Scrum.",
-
-        skillsTitle: "Competências",
-
-        skill1: "Desenvolvimento de Chatbots",
-        skill2: "Soluções Conversacionais",
-        skill3: "Integração de APIs",
-        skill4: "Prompt Engineering",
-        skill5: "Google Cloud Platform",
-        skill6: "IA Generativa",
-        skill7: "Vertex AI",
-        skill8: "Gemini",
-        skill9: "Blip",
-        skill10: "Twilio",
-        skill11: "Zendesk",
-        skill12: "GitHub",
-        skill13: "Scrum",
-
-        languagesTitle: "Linguagens",
-        languages: "JavaScript, Java e Python.",
-
-        experience2Title: "Experiência",
-
-        experience1: "Desenvolvimento de chatbots.",
-        experience2: "Integração de APIs.",
-        experience3: "Manutenção e evolução de aplicações.",
-        experience4: "Desenvolvimento de funcionalidades e automações.",
-
-        highlightsTitle: "Destaques",
-
-        highlight1: "3+ anos de experiência profissional.",
-        highlight2: "Experiência em IA Generativa.",
-        highlight3: "Prompt Engineering.",
-        highlight4: "JavaScript",
-        highlight5: "Blip",
-        highlight6: "Metodologias Ágeis (Scrum).",
-
-        contactTitle: "Contato"
     },
     en: {
         click: "Click here",
@@ -124,64 +67,9 @@ const translations = {
         pauseMusic: "⏸ Pause Music",
         playMusic: "▶️ Play Music",
         itemAutoClicker: "Unlock Auto Clicker (100 Clicks)",
-        itemLanguage: "Unlock Language (30 Clicks)",
-        itemPortfolio: "Unlock Portfolio (200 Clicks)",
-        
-        expTitle: "Chatbot Developer | Artificial Intelligence | JavaScript",
-        educationTitle: "🎓 Education",
-        educationUniversity: "University of Santa Cruz do Sul (UNISC)",
-        educationDegree: "Bachelor's Degree",
-        aboutTitle: "👋 About Me",
-        aboutText1: 'Professional with over <strong>3 years of experience</strong> developing chatbots and Artificial Intelligence solutions.',
-        aboutText2: 'Experienced in developing and maintaining virtual assistants, integrating APIs, and building solutions using Google Cloud Platform and Generative AI while following agile methodologies and software development best practices.',
+        itemLanguage: "Unlock Language (30 Clicks)"
 
-        experienceTitle: "Professional Experience",
-        jobTitle: "Chatbot Developer",
-
-        exp1: "Development and maintenance of chatbots.",
-        exp2: "JavaScript development.",
-        exp3: "Prompt Engineering for Generative AI.",
-        exp4: "Google Cloud Platform (GCP) and Vertex AI.",
-        exp5: "API and external service integration.",
-        exp6: "Scrum methodology.",
-
-        skillsTitle: "Skills",
-
-        skill1: "Chatbot Development",
-        skill2: "Conversational AI Solutions",
-        skill3: "API Integration",
-        skill4: "Prompt Engineering",
-        skill5: "Google Cloud Platform",
-        skill6: "Generative AI",
-        skill7: "Vertex AI",
-        skill8: "Gemini",
-        skill9: "Blip",
-        skill10: "Twilio",
-        skill11: "Zendesk",
-        skill12: "GitHub",
-        skill13: "Scrum",
-
-        languagesTitle: "Languages",
-        languages: "JavaScript, Java and Python.",
-
-        experience2Title: "Experience",
-
-        experience1: "Chatbot development.",
-        experience2: "API integration.",
-        experience3: "Application maintenance and enhancement.",
-        experience4: "Development of new features and automation.",
-
-        highlightsTitle: "Highlights",
-
-        highlight1: "3+ years of professional experience.",
-        highlight2: "Experience with Generative AI.",
-        highlight3: "Prompt Engineering.",
-        highlight4: "JavaScript",
-        highlight5: "Blip",
-        highlight6: "Agile Methodologies (Scrum).",
-
-        contactTitle: "Contact"
-    }   
+    }
 };
 
 //Click button
@@ -226,25 +114,8 @@ buyBtn2.addEventListener("click", () => {
         // ativa visual melhorado
         document.body.classList.add("better-visual");
         activateBetterVisual();
-
-        // seta
-        const arrow = document.getElementById("nextArrow");
-        const arrow2 = document.getElementById("nextArrow2");
-        const arrow3 = document.getElementById("nextArrow3");
-
-        arrow.style.display = "block";
-        arrow2.style.display = "block";
-        arrow3.style.display = "block";
-
-        gsap.to([arrow, arrow2, arrow3], {
-            scale: 1.1,
-            duration: 0.8,
-            repeat: -1,
-            yoyo: true,
-            transformOrigin: "center",
-            ease: "power1.inOut"
-        });
     } 
+
 });
 
 //Music
@@ -306,7 +177,6 @@ buyBtn5.addEventListener("click", () => {
             interval = setInterval(() => {
                 points += 1;
                 counter.textContent = points;
-                checkUnlocks();
             }, 500); // 500ms = 1 sec
         }
 
@@ -364,26 +234,6 @@ volumeSlider.addEventListener("input", () => {
     music.volume = volumeSlider.value;
 });
 
-// Portfolio
-buyBtn7.addEventListener("click", () => {
-    if (points >= 200 && !purchased7) {
-
-        purchased7 = true;
-
-        points -= 200;
-        counter.textContent = points;
-
-        buyBtn7.disabled = true;
-
-        portfolioText.style.visibility = "visible";
-        portfolioText2.style.visibility = "visible";
-
-        unlockedItems.portfolio = true;
-        updateLanguage();
-    }
-});
-
-
 // FUNCTIONS
 
 function unlockItem(itemKey, button) {
@@ -417,9 +267,6 @@ function updateLanguage() {
 
     document.getElementById("itemLanguageText").textContent =
         translations[currentLang].itemLanguage;
-
-    document.getElementById("itemPortfolioText").textContent =
-        translations[currentLang].itemPortfolio;
 
     // Update buttons
     buyBtn.textContent =
@@ -458,71 +305,6 @@ function updateLanguage() {
             ? translations[currentLang].unlocked
             : translations[currentLang].buy;
 
-    buyBtn7.textContent =
-        unlockedItems.portfolio
-            ? translations[currentLang].unlocked
-            : translations[currentLang].buy;
-
-    const ids = [
-        "expTitle",
-        "educationTitle",
-        "educationUniversity",
-        "educationDegree",
-        "aboutTitle",
-        "aboutText1",
-        "aboutText2",
-
-        "experienceTitle",
-        "jobTitle",
-        "exp1",
-        "exp2",
-        "exp3",
-        "exp4",
-        "exp5",
-        "exp6",
-
-        "skillsTitle",
-        "skill1",
-        "skill2",
-        "skill3",
-        "skill4",
-        "skill5",
-        "skill6",
-        "skill7",
-        "skill8",
-        "skill9",
-        "skill10",
-        "skill11",
-        "skill12",
-        "skill13",
-
-        "languagesTitle",
-        "languages",
-
-        "experience2Title",
-        "experience1",
-        "experience2",
-        "experience3",
-        "experience4",
-
-        "highlightsTitle",
-        "highlight1",
-        "highlight2",
-        "highlight3",
-        "highlight4",
-        "highlight5",
-        "highlight6",
-
-        "contactTitle"
-    ];
-
-    ids.forEach(id => {
-        const element = document.getElementById(id);
-        if (element && translations[currentLang][id]) {
-            element.innerHTML = translations[currentLang][id];
-        }
-    });
-
 }
 
 function checkUnlocks() {
@@ -559,13 +341,9 @@ function checkUnlocks() {
     if (points >= 15 && !purchased6) {
         itemLanguage.style.display = "block";
     }
-    
-    if (points >= 100 && purchased2) {
-        itemPortfolio.style.display = "block";
-    }
 
 }
-
+    
  function activateBetterVisual() {
 
     // ativa GSAP
@@ -586,6 +364,263 @@ function checkUnlocks() {
             scrub: 1,
             pin: true
         }
+
     });
+
 } 
 
+HTML:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Horizontal -->
+    <section class="horizontal-section">
+
+        <div class="horizontal-container">
+
+            <div class="slide slide1">
+                <header>
+                    <h1 id="h1" style="display:none;">
+                        Portfólio: The Clicker Game
+                    </h1>
+                </header>
+
+                <div id="mixer" style="display:none;">
+                    <br><br>
+                    <button id="toggleMusic">⏸ Pausar Música</button>
+                    <br><br>
+                    <label>Volume:</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                </div>
+
+                <div id="lang" style="display:none;">
+                    <button id="langBtn">
+                        <img id="flagIcon" src="/assets/images/br.png" alt="Idioma" width="30">
+                    </button>
+                </div>
+
+                <div id="game">
+                    <h1 id="counter">0</h1>
+                    <button id="clickBtn">Clique aqui</button>
+                </div>
+
+                <div id="store" style="display:none;">
+                    <h2>Loja</h2>
+
+                    <div class="itemStore" style="display:none;" id="itemTitle">
+                        <p id="itemTitleText">Desbloquear Título (10 Cliques)</p>
+                        <button id="clickBtnPurchase1">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemLanguage">
+                        <p id="itemLanguageText">Desbloquear Linguagem (30 Cliques)</p>
+                        <button id="clickBtnPurchase6">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemBetterVisual">
+                        <p id="itemBetterVisualText">Desbloquear Visual Melhorado (50 Cliques)</p>
+                        <button id="clickBtnPurchase2">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemMusic">
+                        <p id="itemMusicText">Desbloquear Musica (70 Cliques)</p>
+                        <button id="clickBtnPurchase3">
+                            Desbloquear
+                        </button>
+                        <audio id="music" src="assets/music.mp3" loop></audio>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemMixer">
+                        <p id="itemMixerText">Desbloquear Mixer (25 Cliques)</p>
+                        <button id="clickBtnPurchase4">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemAutoClicker">
+                        <p id="itemAutoClickerText">Desbloquear Auto Clicker (100 Cliques)</p>
+                        <button id="clickBtnPurchase5">
+                            Desbloquear
+                        </button>
+                    </div>
+                    <div class="itemStore" style="display:none;" id="itemPortfolio">
+                        <p id="itemPortfolioText">Desbloquear Portfolio (300 Cliques)</p>
+                        <button id="clickBtnPurchase7">
+                            Desbloquear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide slide2">
+                Dados Portfólio
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Vertical normal -->
+    <section class="page1">
+        Dados Portfólio pt2
+    </section>
+
+    <!--
+    <script>
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const container = document.querySelector(".horizontal-container");
+
+        gsap.to(container, {
+
+            x: () => -(container.scrollWidth - window.innerWidth),
+
+            ease: "none",
+
+            scrollTrigger: {
+                trigger: ".horizontal-section",
+                start: "top top",
+                end: () => "+=" + window.innerWidth,
+                scrub: 1,
+                pin: true
+            }
+
+        });
+
+    </script>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+</body>
+
+</html>
+
+CSS:
+
+#store {
+    margin-top: 30px;
+    padding: 15px;
+    border: 2px solid black;
+    width: 250px;
+    text-align: center;
+}
+
+#store h2 {
+    margin-top: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center; /* centralize everything */
+}
+
+#h1 {
+    text-align: left;   /* move away from the center */
+    margin-left: 20px;  /* move away from the edge */
+}
+
+#game, #store {
+    margin: 20px auto;
+    width: 300px;
+}
+
+#mixer {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.volumeControl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#lang {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#langBtn img {
+    border-radius: 5px;
+}
+
+*{
+    margin:1;
+    padding:1;
+    box-sizing:border-box;
+}
+
+/* Better Visual */
+
+body.better-visual .horizontal-section{
+    height:100vh;
+    overflow:hidden;
+}
+
+body.better-visual .horizontal-container{
+    display:flex;
+    width:200vw;
+    height:100vh;
+}
+
+body.better-visual .slide{
+    position: relative;
+    width:100vw;
+    height:100vh;
+
+    font-size:1.2rem;
+    color:white;
+}
+
+body.better-visual .slide1{
+    background:#08571a;
+}
+
+body.better-visual .slide2{
+    background:#033d10;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:5rem;
+}
+
+body.better-visual .page1{
+    height:100vh;
+    background:#012a05;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:5rem;
+    color:white;
+}
