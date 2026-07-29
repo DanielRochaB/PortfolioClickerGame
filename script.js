@@ -342,7 +342,7 @@ buyBtn6.addEventListener("click", () => {
 lang.addEventListener("click", () => {
     currentLang = currentLang === "en" ? "pt" : "en";
     updateLanguage();
-    flagIcon.src = currentLang === "pt" ? "assets/images/us.png" : "assets/images/br.png";
+    flagIcon.src = currentLang === "pt" ? "./assets/images/us.png" : "./assets/images/br.png";
 });
 
 
